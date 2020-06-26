@@ -42,8 +42,9 @@ def server():
                 break
 
             # 第一次接收的是命令，包括get和文件名，用filename接受文件名
-            cmd, filename = data.decode().split(' ', 1)
-            search('/home', 'fufu')
+            cmd, filename = data.decode().split(' ')
+            print(filename)
+            search('/home', str(filename))
             print(routes)
             conn.send(str(len(routes)))   #发送文件数
 
